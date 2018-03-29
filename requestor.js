@@ -30,6 +30,7 @@ function hitOne() {
   })
 }
 
+// in this function you can replace axios.all with Promise.all, incase you just want to simply check with the latter
 function hitMultiple(numberOfURLs, state) {
     axios.all(getAxiosList(numberOfURLs, state))
     .then( (response) => {
