@@ -1,3 +1,5 @@
+***NOTE: the urlList.json file is empty. Populate it according to your needs***
+
 **Usage**:
 1. Clone the repo
 2. npm i
