@@ -3,6 +3,9 @@ var fetch  = require('node-fetch')
 var images = require('./urlList.json')
 var slicedURLs
 
+
+// ###### USING AXIOS #####
+
 function getAxiosList(numberOfURLs, state) {
     if(state === 'random') {
         var randomUrls = (images.urls).sort( function() { return 0.5 - Math.random() } )
@@ -11,10 +14,10 @@ function getAxiosList(numberOfURLs, state) {
     else {
         slicedURLs = (images.urls).slice(0,numberOfURLs)
     }
-    var axiosArray =  (slicedURLs).map((val, index, arr) => {
-        return axios.get(val)
+    var axiosList =  (slicedURLs).map((URL, index, arr) => {
+        return axios.get(URL)
     })
-    return axiosArray
+    return axiosList
 }
 
 function hitOne() {
@@ -40,8 +43,8 @@ function hitMultiple(numberOfURLs, state) {
     })
 }
 
-const numberOfURLs = process.argv[2]
-const state = process.argv[3]
+const numberOfURLs = process.argv[2] // number of URLs that you want to hit
+const state = process.argv[3] // [random or constant] => either you want random set of URLs to get hit everytime or same set of URLs
 hitMultiple(numberOfURLs, state)
 // getAxiosList(numberOfURLs, state)
 
