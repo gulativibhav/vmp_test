@@ -1,9 +1,12 @@
 **Usage**:
+1. Clone the repo
+2. npm i
+3. Run the following command
 ```bash
 node requestor.js <number of URLs> <state>
 ```
 
-Here:
+here:
 **number of URLs**: Number of URLs that you want to hit at once
 **state**: Can have two values, either,
 > random : the given **number of URLs** will be random every time you run the script, *or*,
